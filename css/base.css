@@ -1,0 +1,36 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--tinta);
+  line-height: 1.55;
+  background: var(--creme) radial-gradient(#6b1d2f33 .75px, transparent .75px) 0 0 / 20px 20px;
+  overflow-x: hidden;
+}
+
+/* Manchas de cor desfocadas ao fundo */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(24rem 24rem at -5% 0%, #6b1d2f26, transparent 70%),
+    radial-gradient(24rem 24rem at 105% 50%, #6b806226, transparent 70%),
+    radial-gradient(30rem 30rem at 35% 105%, #eca3b840, transparent 70%);
+}
+
+.convite { max-width: var(--largura); margin-inline: auto; padding: 3rem 1rem 4rem; display: grid; gap: 2.5rem; }
+
+h2, h3 { font-family: var(--fonte-titulo); color: var(--vinho); font-weight: 900; line-height: 1.15; }
+h2 { font-size: clamp(1.6rem, 5vw, 2rem); }
+h3 { font-size: 1.25rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+::selection { background: var(--rosa); color: var(--vinho); }
+:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
+
+/* Entrada ao rolar */
+[data-reveal] { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 90ms); }
+[data-reveal].visivel { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+}

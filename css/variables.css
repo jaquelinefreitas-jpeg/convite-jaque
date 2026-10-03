@@ -1,0 +1,20 @@
+:root {
+  --vinho: #6b1d2f;
+  --vinho-claro: #8b293e;
+  --verde: #6b8062;
+  --verde-claro: #e3e9dd;
+  --rosa: #eca3b8;
+  --rosa-claro: #f8dbe3;
+  --creme: #faf6f0;
+  --tinta: #332224;
+  --branco: #fff;
+
+  --fonte-titulo: "Playfair Display", Georgia, serif;
+  --fonte-texto: "Nunito Sans", system-ui, sans-serif;
+
+  --borda: 4px solid var(--vinho);
+  --sombra: 8px 8px 0 var(--vinho);
+  --sombra-sm: 4px 4px 0 var(--vinho);
+  --raio: 1.5rem;
+  --largura: 42rem;
+}

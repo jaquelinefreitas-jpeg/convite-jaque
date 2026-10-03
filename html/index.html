@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convite de aniversário</title>
+  <meta name="theme-color" content="#6b1d2f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;800;900&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+  <!-- Ícones (sprite SVG, sem dependências) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 000-7.8z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></symbol>
+  </svg>
+
+  <a id="link-flutuante" class="flutuante" href="#playlist" aria-label="Ir para a playlist">
+    <i><svg class="ic"><use href="#i-music"/></svg></i><span>Playlist da festa</span>
+  </a>
+
+  <main class="convite">
+
+    <header class="hero" data-reveal>
+      <span class="fita">★ Save the date ★</span>
+      <div class="cartao">
+        <span class="estrela" aria-hidden="true"><svg class="ic"><use href="#i-star"/></svg></span>
+        <span class="selo-pilula">✨ É meu aniversário! ✨</span>
+        <h1 id="titulo" class="titulo"></h1>
+        <p id="frase" class="frase"></p>
+
+        <figure class="polaroide" id="polaroide">
+          <span class="pino" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
+          <div class="polaroide__foto">
+            <img src="https://instagram.ffor23-1.fna.fbcdn.net/v/t51.82787-19/782209370_18618618178058167_4448107455623060341_n.jpg?_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=gBreuVOeoOcQ7kNvwFprSAx&_nc_oc=AdqXVtz9XOOJphUvYzNHAt-Dm0hB8p2df1gT55VJqt2Cto72Dc2gwujcdCky0qwkdWk&_nc_zt=24&_nc_ht=instagram.ffor23-1.fna&_nc_gid=3F3cNZfLyRfXEWXGNZXDsA&_nc_ss=7b6a8&oh=00_AQNypTcHXS0Lh4-SLFpzqZSqb3CQwmSxDS5baH3p_wGPQA&oe=6AC70937" alt="Foto da aniversariante" onerror="this.remove()">
+          </div>
+          <figcaption id="legenda"></figcaption>
+        </figure>
+
+        <hr class="divisor">
+        <p class="contagem-titulo">Faltam poucos dias</p>
+        <div id="contagem" class="contagem"></div>
+      </div>
+    </header>
+
+    <section class="info">
+      <article class="cartao" data-reveal style="--i:0">
+        <div class="icone"><svg class="ic"><use href="#i-cal"/></svg></div>
+        <h3>Data e hora</h3>
+        <strong id="data"></strong>
+        <p id="semana"></p>
+        <hr>
+        <p><svg class="ic"><use href="#i-award"/></svg> Traje: <span id="traje"></span></p>
+      </article>
+
+      <article class="cartao" data-reveal style="--i:1">
+        <div class="icone icone--verde"><svg class="ic"><use href="#i-pin"/></svg></div>
+        <h3>Local da festa</h3>
+        <strong id="local-nome"></strong>
+        <p id="local-end"></p>
+        <iframe id="mapa" title="Mapa do local" loading="lazy" hidden></iframe>
+        <div class="acoes">
+          <a id="link-mapa" class="botao botao--verde" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg> Google Maps</a>
+          <button id="copiar-end" class="botao botao--contorno" type="button"><svg class="ic"><use href="#i-copy"/></svg> <span>Copiar</span></button>
+        </div>
+      </article>
+    </section>
+
+    <section id="playlist" class="cartao cartao--verde" data-reveal>
+      <div class="icone" style="margin-inline:auto"><svg class="ic"><use href="#i-music"/></svg></div>
+      <h2>Você escolhe a trilha</h2>
+      <p>Adicione as músicas que não podem faltar na playlist da festa.</p>
+      <a id="link-playlist" class="botao" target="_blank" rel="noopener">Adicionar músicas</a>
+    </section>
+
+    <section id="confirmar" class="cartao" data-reveal>
+      <span class="fita" style="position:absolute;top:-.9rem;right:1.2rem;margin:0;width:4.5rem;transform:rotate(4deg)">RSVP</span>
+      <div class="cabecalho-form">
+        <div class="icone"><svg class="ic"><use href="#i-send"/></svg></div>
+        <h2>Confirmação de presença</h2>
+        <p>Confirme até <span id="prazo"></span> para ajustarmos a lista.</p>
+      </div>
+
+      <form id="form-rsvp" class="form">
+        <label class="campo"><span>Seu nome completo *</span>
+          <input type="text" name="nome" required autocomplete="name" placeholder="Ex: Clara Mendes">
+        </label>
+
+        <fieldset class="campo">
+          <legend>Você vai comparecer?</legend>
+          <div class="alternar">
+            <label><input type="radio" name="vai" value="sim" checked><span>Sim, com certeza!</span></label>
+            <label><input type="radio" name="vai" value="nao"><span>Infelizmente não</span></label>
+          </div>
+        </fieldset>
+
+        <div class="colapsavel" id="bloco-presenca">
+          <div>
+            <fieldset class="campo">
+              <legend>Acompanhantes</legend>
+              <div class="alternar alternar--verde">
+                <label><input type="radio" name="companhia" value="so" checked><span>Vou sozinho(a)</span></label>
+                <label><input type="radio" name="companhia" value="com"><span>Com acompanhante</span></label>
+              </div>
+            </fieldset>
+
+            <div class="colapsavel" id="bloco-acomp" data-fechado>
+              <div>
+                <label class="campo"><span>Nome do(s) acompanhante(s)</span>
+                  <input type="text" name="acomp" placeholder="Ex: Marcos Ribeiro">
+                </label>
+              </div>
+            </div>
+
+            <label class="campo"><span>Restrição alimentar ou alergia</span>
+              <input type="text" name="restricao" placeholder="Ex: Vegetariano, vegano, sem glúten...">
+            </label>
+          </div>
+        </div>
+
+        <label class="campo"><span>Recado carinhoso para a aniversariante</span>
+          <textarea name="recado" rows="3" placeholder="Deixe uma mensagem fofa..."></textarea>
+        </label>
+
+        <button class="botao botao--cheio" type="submit"><svg class="ic"><use href="#i-send"/></svg> Confirmar presença</button>
+      </form>
+
+      <div id="resposta" class="resposta" hidden role="status">
+        <p data-msg></p>
+        <button class="link" data-alterar type="button">Alterar resposta</button>
+      </div>
+    </section>
+
+    <footer class="rodape" data-reveal>Com carinho, <span id="rodape-nome"></span> ❤️</footer>
+  </main>
+
+  <script src="../js/config.js" defer></script>
+  <script src="../js/countdown.js" defer></script>
+  <script src="../js/reveal.js" defer></script>
+  <script src="../js/rsvp.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
