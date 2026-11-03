@@ -19,22 +19,20 @@ function iniciarRSVP({ form, painel, whatsapp, anfitria }) {
     const vai = d.get("vai") === "sim";
     const comAcomp = vai && d.get("companhia") === "com";
     const resposta = {
-      nome: d.get("nome").trim(),
+      nome: (d.get("nome") || "").trim(),
       vai,
-      acomp: comAcomp ? d.get("acomp").trim() : "",
-      restricao: vai ? d.get("restricao").trim() : "",
-      recado: d.get("recado").trim(),
+      acomp: comAcomp ? (d.get("acomp") || "").trim() : "",
     };
     if (!resposta.nome) return form.nome.focus();
 
-    localStorage.setItem(CHAVE, JSON.stringify(resposta));
+    try { localStorage.setItem(CHAVE, JSON.stringify(resposta)); } catch {}
     mostrarResposta(painel, form, resposta);
     if (vai) chuvaDeConfete();
     window.open(montarLinkWhatsApp(whatsapp, anfitria, resposta), "_blank", "noopener");
   });
 
   painel.querySelector("[data-alterar]").addEventListener("click", () => {
-    localStorage.removeItem(CHAVE);
+    try { localStorage.removeItem(CHAVE); } catch {}
     painel.hidden = true;
     form.hidden = false;
   });
