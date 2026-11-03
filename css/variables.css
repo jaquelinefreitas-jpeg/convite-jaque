@@ -9,9 +9,9 @@
   --tinta: #332224;
   --branco: #fff;
 
-  --fonte-titulo: "Times, Times New Roman", sans-serif;
+  --fonte-titulo: "'Fraunces", serif;
   --fonte-texto: "Nunito Sans", system-ui, sans-serif;
-
+  --font-style: italic;
   --borda: 4px solid var(--vinho);
   --sombra: 8px 8px 0 var(--vinho);
   --sombra-sm: 4px 4px 0 var(--vinho);
