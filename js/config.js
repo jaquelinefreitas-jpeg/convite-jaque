@@ -9,7 +9,7 @@ const CONFIG = {
   local: {
     endereco: "Rua Dom Henrique, 11 – Vila Pery",
   },
-  playlistUrl: "https://open.spotify.com/", // link da playlist colaborativa
-  whatsapp: "5585999999999", // DDI + DDD + número, só dígitos (recebe as confirmações)
+  playlistUrl: "https://music.youtube.com/playlist?list=PLL_a4VtfWC0U&jct=CDDVrodMQUg6FFnCxixWTA", // link da playlist colaborativa
+  whatsapp: "558591585286", // DDI + DDD + número, só dígitos (recebe as confirmações)
   prazoConfirmacao: "14 de novembro",
 };
