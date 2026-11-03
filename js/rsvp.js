@@ -48,8 +48,6 @@ function montarLinkWhatsApp(numero, anfitria, r) {
   const linhas = [
     `Oi ${anfitria}! Aqui é ${r.nome}, ${r.vai ? "confirmo presença 🎉" : "infelizmente não poderei ir 💔"}`,
     r.acomp && `Acompanhante: ${r.acomp}`,
-    r.restricao && `Restrição alimentar: ${r.restricao}`,
-    r.recado && `"${r.recado}"`,
   ].filter(Boolean);
   return `https://wa.me/${numero}?text=${encodeURIComponent(linhas.join("\n"))}`;
 }
