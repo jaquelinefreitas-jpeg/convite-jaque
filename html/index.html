@@ -42,8 +42,8 @@
         <figure class="polaroide" id="polaroide">
           <span class="pino" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
           <div class="polaroide__foto">
-           <img src="../assets/images/foto1.jpeg" alt="Foto da aniversariante" onerror="this.remove()">
-          <img src="../assets/images/foto2.jpeg" alt="Foto da aniversariante" onerror="this.remove()">
+            <img src="../assets/images/foto1.jpeg" alt="Jaque hoje, com chapéu de festa">
+            <img src="../assets/images/foto2.jpeg" alt="Jaque criança, de óculos escuros e chapéu de festa">
           </div>
           <figcaption id="legenda"></figcaption>
         </figure>
@@ -68,7 +68,6 @@
         <strong id="local-nome"></strong>
         <p id="local-end"></p>
         <button id="copiar-end" class="botao botao--contorno" type="button"><svg class="ic"><use href="#i-copy"/></svg> <span>Copiar</span></button>
-        </div>
       </article>
     </section>
 
@@ -118,7 +117,15 @@
               </div>
             </div>
 
-           
+            <label class="campo"><span>Restrição alimentar</span>
+              <input type="text" name="restricao" placeholder="Ex: sem lactose, vegetariano(a)">
+            </label>
+          </div>
+        </div>
+
+        <label class="campo"><span>Recado para a aniversariante</span>
+          <textarea name="recado" rows="2" placeholder="Opcional"></textarea>
+        </label>
 
         <button class="botao botao--cheio" type="submit"><svg class="ic"><use href="#i-send"/></svg> Confirmar presença</button>
       </form>
