@@ -9,7 +9,7 @@
   --tinta: #332224;
   --branco: #fff;
 
-  --fonte-titulo: "Playfair Display", Georgia, serif;
+  --fonte-titulo: "Times, Times New Roman", sans-serif;
   --fonte-texto: "Nunito Sans", system-ui, sans-serif;
 
   --borda: 4px solid var(--vinho);
