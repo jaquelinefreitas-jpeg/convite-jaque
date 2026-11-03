@@ -5,7 +5,7 @@ const fmt = (opts) => data.toLocaleString("pt-BR", { timeZone: "America/Fortalez
 function preencherConteudo() {
   document.title = `${CONFIG.anfitria} faz ${CONFIG.idade}`;
   $("#titulo").textContent = `${CONFIG.anfitria} faz ${CONFIG.idade}!`;
-  $("#legenda").textContent = `Eu e a mini eu te convidamos para celebrarmos juntos essa nova fase da minha vida`;
+  $("#legenda").textContent = `Eu e a mini Jaka estamos te convidando: ela de óculos escuros, eu de óculos de grau. A vibe mudou, a festa continua. Vem!`;
   $("#data").textContent = fmt({ weekday: "long", day: "numeric", month: "long", year: "numeric" });
   $("#semana").textContent = `Às ${fmt({ hour: "2-digit", minute: "2-digit" }).replace(":", "h")}`;
   $("#local-nome").textContent = CONFIG.local.nome;
