@@ -2,7 +2,7 @@
  * Único arquivo que você precisa editar para personalizar o convite.
  */
 const CONFIG = {
-  anfitria: "Jaque",
+  anfitria: "Jaka",
   idade: 28,
   frase: "Você está convidado! Junte-se a mim para uma noite repleta de alegria, risadas e boa companhia.",
   dataISO: "2026-11-21T13:00:00-03:00",
